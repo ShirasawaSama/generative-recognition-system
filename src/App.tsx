@@ -38,7 +38,6 @@ const App: React.FC = () => {
       }
     }
   } while (length !== lastLength)
-  console.log(derivedResults)
 
   return <Container maxWidth='sm'>
     <Typography variant='h4'>{data.title}</Typography>
