@@ -32,12 +32,13 @@ const App: React.FC = () => {
     lastLength = length
     for (const [key, value] of Object.entries(data.conditions)) {
       if (derivedResults[key]) continue
-      if (value.every(it => selected[it])) {
+      if (value.every(it => selected[it] || derivedResults[it])) {
         derivedResults[key] = value
         length++
       }
     }
   } while (length !== lastLength)
+  console.log(derivedResults)
 
   return <Container maxWidth='sm'>
     <Typography variant='h4'>{data.title}</Typography>
